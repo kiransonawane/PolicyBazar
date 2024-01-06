@@ -1,0 +1,11 @@
+D:\PB\QuoteAPI\Quote.Sql\bin\Debug\net6.0\Quote.Sql.deps.json
+D:\PB\QuoteAPI\Quote.Sql\bin\Debug\net6.0\Quote.Sql.dll
+D:\PB\QuoteAPI\Quote.Sql\bin\Debug\net6.0\Quote.Sql.pdb
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\Quote.Sql.GeneratedMSBuildEditorConfig.editorconfig
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\Quote.Sql.AssemblyInfoInputs.cache
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\Quote.Sql.AssemblyInfo.cs
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\Quote.Sql.csproj.CoreCompileInputs.cache
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\Quote.Sql.dll
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\refint\Quote.Sql.dll
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\Quote.Sql.pdb
+D:\PB\QuoteAPI\Quote.Sql\obj\Debug\net6.0\ref\Quote.Sql.dll

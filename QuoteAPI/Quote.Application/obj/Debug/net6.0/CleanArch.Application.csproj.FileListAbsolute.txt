@@ -1,0 +1,15 @@
+D:\PB\QuoteAPI\CleanArch.Application\bin\Debug\net6.0\CleanArch.Application.deps.json
+D:\PB\QuoteAPI\CleanArch.Application\bin\Debug\net6.0\CleanArch.Application.dll
+D:\PB\QuoteAPI\CleanArch.Application\bin\Debug\net6.0\CleanArch.Application.pdb
+D:\PB\QuoteAPI\CleanArch.Application\bin\Debug\net6.0\CleanArch.Core.dll
+D:\PB\QuoteAPI\CleanArch.Application\bin\Debug\net6.0\CleanArch.Core.pdb
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.csproj.AssemblyReference.cache
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.AssemblyInfoInputs.cache
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.AssemblyInfo.cs
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.csproj.CoreCompileInputs.cache
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.csproj.CopyComplete
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.dll
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\refint\CleanArch.Application.dll
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\CleanArch.Application.pdb
+D:\PB\QuoteAPI\CleanArch.Application\obj\Debug\net6.0\ref\CleanArch.Application.dll

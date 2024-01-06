@@ -1,0 +1,11 @@
+D:\PB\QuoteAPI\CleanArch.Core\bin\Debug\net6.0\CleanArch.Core.deps.json
+D:\PB\QuoteAPI\CleanArch.Core\bin\Debug\net6.0\CleanArch.Core.dll
+D:\PB\QuoteAPI\CleanArch.Core\bin\Debug\net6.0\CleanArch.Core.pdb
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\CleanArch.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\CleanArch.Core.AssemblyInfoInputs.cache
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\CleanArch.Core.AssemblyInfo.cs
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\CleanArch.Core.csproj.CoreCompileInputs.cache
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\CleanArch.Core.dll
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\refint\CleanArch.Core.dll
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\CleanArch.Core.pdb
+D:\PB\QuoteAPI\CleanArch.Core\obj\Debug\net6.0\ref\CleanArch.Core.dll
