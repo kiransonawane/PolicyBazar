@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Quote.Application.Mapper;
+using System.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +21,11 @@ XmlConfigurator.Configure(new FileInfo("log4net.config"));
 //Injecting services.
 builder.Services.RegisterServices();
 builder.Services.AddHttpContextAccessor();
-
+var dbConnectionString = builder.Configuration.GetConnectionString("PbDbConnection");
+builder.Services.AddDbContext<PbContext>(
+    options => options.UseSqlServer(dbConnectionString)
+               .EnableSensitiveDataLogging()
+               .LogTo(Console.WriteLine));
 
 // Add services to the container.
 builder.Services.AddControllers();

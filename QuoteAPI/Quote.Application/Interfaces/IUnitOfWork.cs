@@ -2,5 +2,6 @@
 {
     public interface IUnitOfWork
     {
+        IQuoteRequestRepository quoteRequests { get; }
     }
 }

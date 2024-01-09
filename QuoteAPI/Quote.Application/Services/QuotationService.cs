@@ -3,28 +3,41 @@ using Quote.Application.Dto.Quote;
 using Quote.Application.Interfaces;
 using Quote.Application.Request.Quote;
 using Quote.Application.Response.Quote;
+using Quote.Core.Entities;
+using QuoteRequest = Quote.Application.Request.Quote.QuoteRequest;
+using QuoteRequestEntity = Quote.Core.Entities.QuoteRequest;
 
 namespace Quote.Application.Services
 {
     public class QuotationService : IQuotationService
     {
         private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public QuotationService(IMapper mapper)
+        public QuotationService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
-        public async Task<List<QuoteDto>> GetQuotation(QuoteRequest quotationRequest)
+        public async Task<List<QuoteDto>> GetQuotation(QuoteRequest quotationRequest, CancellationToken cancellationToken)
         {
             var quotes = new List<QuoteDto>();
+            await AddQuoteRequest(quotationRequest, cancellationToken);
             quotes = _mapper.Map<List<QuoteDto>>(await getQuoteResponse());
             return await Task.FromResult(quotes);
         }
 
-        public async Task<int> SaveQuotation(SaveQuoteRequest saveQuotationRequest)
+        public async Task<int> SaveQuotation(SaveQuoteRequest saveQuotationRequest, CancellationToken cancellationToken)
         {
             return await Task.FromResult(111);
+        }
+
+        private async Task<bool> AddQuoteRequest(QuoteRequest quoteRequest, CancellationToken cancellationToken)
+        {
+            var quoteRequestEntity = _mapper.Map<QuoteRequestEntity>(quoteRequest);
+            await _unitOfWork.quoteRequests.AddAsync(quoteRequestEntity, cancellationToken);
+            return true;
         }
 
         private Task<List<QuoteResponse>> getQuoteResponse()

@@ -11,7 +11,7 @@ namespace Quote.Application.Interfaces
 {
     public interface IQuotationService
     {
-        Task<List<QuoteDto>> GetQuotation(QuoteRequest quotationRequest);
-        Task<int> SaveQuotation(SaveQuoteRequest saveQuotationRequest);
+        Task<List<QuoteDto>> GetQuotation(QuoteRequest quotationRequest, CancellationToken cancellationToken);
+        Task<int> SaveQuotation(SaveQuoteRequest saveQuotationRequest, CancellationToken cancellationToken);
     }
 }

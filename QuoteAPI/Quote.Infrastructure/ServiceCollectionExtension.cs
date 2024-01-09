@@ -13,6 +13,7 @@ namespace Quote.Infrastructure
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IClaimService, ClaimService>();
             services.AddTransient<IQuotationService, QuotationService>();
+            services.AddTransient<IQuoteRequestRepository, QuoteRequestRepository>();
             services.AddSingleton<Quote.Application.Interfaces.ILogger, Quote.Logging.Logger>();
         }
     }

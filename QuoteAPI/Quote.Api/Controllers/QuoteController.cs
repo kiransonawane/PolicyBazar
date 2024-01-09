@@ -19,14 +19,17 @@ namespace Quote.Api.Controllers
         private readonly ILogger _logger;
         private readonly IQuotationService _quotationService;
         private readonly IValidator<QuoteRequest> _quoteRequestValidator;
-        private readonly IValidator<SaveQuoteRequest> _saveQuoteRequestValidator;
-        public QuoteController(IClaimService claimInfo, ILogger logger, IValidator<QuoteRequest> quoteRequestValidator, IQuotationService quotationService, IValidator<SaveQuoteRequest> saveQuoteRequestValidator)
+        //private readonly IValidator<SaveQuoteRequest> _saveQuoteRequestValidator;
+        public QuoteController(IClaimService claimInfo, 
+            ILogger logger, 
+            IValidator<QuoteRequest> quoteRequestValidator, 
+            IQuotationService quotationService)
         {
             _claimInfo = claimInfo;
             _logger = logger;
             _quoteRequestValidator = quoteRequestValidator;
             _quotationService = quotationService;
-            _saveQuoteRequestValidator = saveQuoteRequestValidator;
+            //_saveQuoteRequestValidator = saveQuoteRequestValidator;
         }
 
         [HttpPost("get-quote")]
@@ -44,7 +47,7 @@ namespace Quote.Api.Controllers
             
             try
             {
-                var quotation = await _quotationService.GetQuotation(quoteRequest);
+                var quotation = await _quotationService.GetQuotation(quoteRequest, cancellationToken);
                 return Ok(quotation);
             }
             catch (Exception ex)
@@ -58,34 +61,34 @@ namespace Quote.Api.Controllers
             }
         }
 
-        [HttpPost("save-quote")]
-        public async Task<IActionResult> SaveQuote(SaveQuoteRequest saveQuoteRequest, CancellationToken cancellationToken)
-        {
-            var saveQuoteRequestValidationResult = _saveQuoteRequestValidator.Validate(saveQuoteRequest);
-            if (!saveQuoteRequestValidationResult.IsValid)
-            {
-                return BadRequest(saveQuoteRequestValidationResult.Errors.Select(error => new
-                {
-                    Field = error.PropertyName,
-                    Message = error.ErrorMessage
-                }));
-            }
+        //[HttpPost("save-quote")]
+        //public async Task<IActionResult> SaveQuote(SaveQuoteRequest saveQuoteRequest, CancellationToken cancellationToken)
+        //{
+        //    var saveQuoteRequestValidationResult = _saveQuoteRequestValidator.Validate(saveQuoteRequest);
+        //    if (!saveQuoteRequestValidationResult.IsValid)
+        //    {
+        //        return BadRequest(saveQuoteRequestValidationResult.Errors.Select(error => new
+        //        {
+        //            Field = error.PropertyName,
+        //            Message = error.ErrorMessage
+        //        }));
+        //    }
 
-            try
-            {
-                var quotationNumber = await _quotationService.SaveQuotation(saveQuoteRequest);
-                return Ok(quotationNumber);
-            }
-            catch (Exception ex)
-            {
-                _logger.Error(ex);
-                var errorResponse = new ErrorResponseDto
-                {
-                    Detail = ex.Message
-                };
-                return StatusCode(500, errorResponse);
-            }
-        }
+        //    try
+        //    {
+        //        var quotationNumber = await _quotationService.SaveQuotation(saveQuoteRequest, cancellationToken);
+        //        return Ok(quotationNumber);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.Error(ex);
+        //        var errorResponse = new ErrorResponseDto
+        //        {
+        //            Detail = ex.Message
+        //        };
+        //        return StatusCode(500, errorResponse);
+        //    }
+        //}
 
     }
 }

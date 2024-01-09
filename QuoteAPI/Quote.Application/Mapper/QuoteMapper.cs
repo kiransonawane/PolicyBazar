@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Quote.Application.Dto.Quote;
+using Quote.Application.Request.Quote;
 using Quote.Application.Response.Quote;
 
 namespace Quote.Application.Mapper
@@ -66,6 +67,8 @@ namespace Quote.Application.Mapper
                         }
                     }
                 }));
+
+            CreateMap<QuoteRequest, Quote.Core.Entities.QuoteRequest>();
         }
     }
 }
