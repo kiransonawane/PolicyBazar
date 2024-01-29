@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Quote.Core.Entities
 {
-    [Table("dbo.QuoteRequest")]
+    [Table("QuoteRequest")]
     public class QuoteRequest
     {
         [Key]

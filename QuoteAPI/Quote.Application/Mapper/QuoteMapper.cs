@@ -68,7 +68,24 @@ namespace Quote.Application.Mapper
                     }
                 }));
 
-            CreateMap<QuoteRequest, Quote.Core.Entities.QuoteRequest>();
+            CreateMap<QuoteRequest, Quote.Core.Entities.QuoteRequest>()
+                .ForMember(dest => dest.QuotationDate, src => src.MapFrom(s => ConvertStringToDateTime(s.QuotationDate)))
+                .ForMember(dest => dest.InsuredDob, src => src.MapFrom(s => ConvertStringToDateTime(s.InsuredDob)))
+                .ForMember(dest => dest.DlIssueDate, src => src.MapFrom(s => ConvertStringToDateTime(s.DlIssueDate)))
+                .ForMember(dest => dest.RegistrationDate, src => src.MapFrom(s => ConvertStringToDateTime(s.RegistrationDate)));
+        }
+
+        private DateTime ConvertStringToDateTime(string dateString)
+        {
+            string dateFormat = "dd/MM/yyyy";
+            if (DateTime.TryParseExact(dateString, dateFormat, null, System.Globalization.DateTimeStyles.None, out DateTime parsedDate))
+            {
+                return parsedDate;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid date string", nameof(dateString));
+            }
         }
     }
 }

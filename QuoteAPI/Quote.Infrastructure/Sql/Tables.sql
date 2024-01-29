@@ -5,18 +5,18 @@ CREATE TABLE [dbo].[QuoteRequest]
     [PolicyTypeId] INT NOT NULL, 
     [InsuredName] VARCHAR(100) NOT NULL, 
     [CustomerEmail] VARCHAR(50) NOT NULL, 
-    [QuotationDate] DATETIME NOT NULL, 
+    [QuotationDate] DATETIME2 NOT NULL, 
     [PhoneNo] VARCHAR(50) NULL, 
     [Nationality] INT NOT NULL, 
-    [InsuredDob] DATETIME NOT NULL, 
+    [InsuredDob] DATETIME2 NOT NULL, 
     [BusinessCode] VARCHAR(250) NULL, 
     [VehicleMake] VARCHAR(50) NOT NULL, 
     [VehicleModel] VARCHAR(50) NOT NULL, 
-    [DlIssueDate] DATETIME NOT NULL, 
+    [DlIssueDate] DATETIME2 NOT NULL, 
     [ClaimsFreeDriveYrs] INT NOT NULL, 
     [ModelYear] VARCHAR(50) NOT NULL, 
     [CityOfRegistration] VARCHAR(50) NOT NULL, 
-    [RegistrationDate] DATETIME NOT NULL, 
+    [RegistrationDate] DATETIME2 NOT NULL, 
     [VehicleType] VARCHAR(50) NOT NULL, 
     [BodyType] VARCHAR(50) NOT NULL, 
     [PassengerSeats] INT NOT NULL, 
@@ -40,8 +40,8 @@ CREATE TABLE [dbo].[QuoteRequest]
     [IsHireCar] BIT NOT NULL, 
     [QuotevalidityDays] INT NOT NULL, 
     [QuoteResponse] VARCHAR(MAX) NULL, 
-    [CreatedDate] DATETIME NOT NULL, 
-    [UpdatedDate] DATETIME NULL
+    [CreatedDate] DATETIME2 NOT NULL, 
+    [UpdatedDate] DATETIME2 NULL
 )
 
 

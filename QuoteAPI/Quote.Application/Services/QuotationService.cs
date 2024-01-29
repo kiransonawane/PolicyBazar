@@ -36,6 +36,7 @@ namespace Quote.Application.Services
         private async Task<bool> AddQuoteRequest(QuoteRequest quoteRequest, CancellationToken cancellationToken)
         {
             var quoteRequestEntity = _mapper.Map<QuoteRequestEntity>(quoteRequest);
+            quoteRequestEntity.CreatedDate = DateTime.Now;
             await _unitOfWork.quoteRequests.AddAsync(quoteRequestEntity, cancellationToken);
             return true;
         }
